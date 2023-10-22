@@ -1,1 +1,289 @@
+/* все элементы на странице будут иметь прописанную ширину */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
 
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto; /* выравнивание по центру для блока*/
+  margin-right: auto; /* выравнивание по центру для блока*/
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.none {
+  display: none !important; /* полностью скрывает элемент со страницы*/
+}
+
+/*Стили заголовка*/
+
+.header {
+  position: relative;
+  /* определяю модель flex-box для блока .header */
+  display: flex;
+  flex-direction: column; /* выстраиваю flex элементы в колонку, основная ось -Y  */
+  justify-content: center; /* выравниваю по основной оси */
+  align-items: center; /* выравниваю по поперечной оси (горизонтали) */
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: #556983;
+  background-image: url('./img/header/bgfon3.jpg');
+  background-size: cover;
+}
+
+.header-title {
+  margin: 0; /* убрал отступы от блока */
+  margin-bottom: 25px; /* отступ вниз до подзаголовка */
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 130%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 6px 6px 0px black , 9px 8px 0px rgba(0,0,0,0.03);
+}
+
+.header-subtitle {
+  margin: 0; /* убрал отступы от блока */
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.2em; /* расстояние между буквами */
+  text-transform: uppercase; /* регистр букв */
+  color: #fff;
+  text-shadow: 2px 2px 0px black , 3px 4px 0px rgba(0,0,0,0.03);
+}
+
+.header-arrow {
+  width: 36px;
+  height: 36px;
+
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* Стили портфолио */
+
+.portfolio {
+  padding-top: 80px; /* отступ сверху */
+  padding-bottom: 115px; /* отступ снизу */
+}
+
+.portfolio-header {
+  margin: 0;
+  margin-bottom: 70px;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 130%;
+  text-align: center;
+  color: black;
+}
+
+.portfolio-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* отступы между карточками по вертикали */
+}
+
+/* стили для первого рисунка */
+
+.card {
+  margin-bottom: 30px; /* отступ между карточками по горизонтали */
+  max-width: 540px;
+  background-color: #fff;
+  box-shadow: 0px 10px 40px rgba(126, 155, 189, 0.35); /* создает тень на карточках */
+  transition: transform 0.2s ease-in;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+}
+
+.card-link {
+  display: block;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+}
+
+.card-link:hover {
+  color: rgb(39, 91,236);
+}
+
+.card:last-child, .card:nth-last-child(2) {
+  margin-bottom: 0; /* убрал нижний отступ у последних карточек*/
+}
+
+.card-img {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  margin: 0;
+  margin-bottom: 13px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 45px;
+  padding-bottom: 130px;
+  background: #1E4776;
+  color: #fff;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* выравнивание элементов в блоке */
+}
+
+.footer-col {
+  max-width: 350px;
+  flex-grow: 1;
+}
+
+.footer-copyright {
+  color: #7e9ec9;
+  line-height: 1.3;
+}
+
+.footer-copyright-name {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-copyright-name p {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.footer-icons p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.footer-icons-row {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons-row > * + * {
+  margin-left: 30px;
+}
+
+
+.footer-button {
+  /* дисплей, высота, отступы */
+  display: inline-block;
+  height: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* визуальный стиль для контейнера */
+  border: 3px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  /* текст */
+  line-height: 44px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+}
+
+.footer-button:hover {
+  background-color: #fff;
+  color: #1E4776;
+}
+
+.footer-contacts p {
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #7e9ec9;
+}
+
+/* вторая страница сайта */
+
+.project {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.project-header {
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 1.3;
+}
+
+.project-img {
+  margin-bottom: 70px;
+}
+
+.project-description {
+  margin: 0 auto;
+  max-width: 730px;
+  margin-bottom: 60px;
+}
+
+.project-description p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.project-btn-back {
+   /* дисплей, высота, отступы */
+   display: inline-block;
+   height: 60px;
+   padding-left: 30px;
+   padding-right: 30px;
+   /* визуальный стиль для контейнера */
+   border: 3px solid #275bec;
+   border-radius: 50px;
+   color: #275bec;
+   /* текст */
+   line-height: 54px;
+   font-weight: 700;
+   font-size: 16px;
+   text-transform: uppercase;
+   text-decoration: none;
+   transition: all 0.2s ease-in;
+}
+
+.project-btn-back:hover {
+  background-color: #275bec;
+  color: #fff;
+}
